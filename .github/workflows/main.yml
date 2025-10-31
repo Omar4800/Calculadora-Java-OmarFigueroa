@@ -1,0 +1,2 @@
+javac -cp ".;libs/junit-4.13.2.jar;libs/hamcrest-core-1.3.jar" src/Calculadora.java test/CalculadoraTest.java
+java -cp ".;libs/junit-4.13.2.jar;libs/hamcrest-core-1.3.jar;src;test" org.junit.runner.JUnitCore CalculadoraTest
