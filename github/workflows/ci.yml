@@ -1,0 +1,21 @@
+name: Java CI
+on:
+push:
+branches: [ main ]
+pull_request:
+branches: [ main ]
+jobs:
+build:
+runs-on: ubuntu-latest
+steps:
+- name: Checkout del código
+uses: actions/checkout@v3
+- name: Configurar JDK
+uses: actions/setup-java@v3
+with:
+java-version: &#39;17&#39;
+distribution: &#39;temurin&#39;
+- name: Compilar el proyecto
+run: javac src/Calculadora.java test/CalculadoraTest.java
+- name: Ejecutar pruebas
+run: java -cp .:src:test CalculadoraTest
